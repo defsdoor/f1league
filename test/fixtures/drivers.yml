@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: drivers
+#
+#  id           :integer          not null, primary key
+#  forename     :string(32)       default(""), not null
+#  surname      :string(32)       default(""), not null
+#  display_name :string(64)       default(""), not null
+#  born_on      :date             default("1970/01/01"), not null
+#  country_id   :integer
+#
+# Indexes
+#
+#  index_drivers_on_country_id  (country_id)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+lewis_hamilton: {
+  forename: 'Lewis',
+  surname: 'Hamilton',
+  display_name: 'Lewis Hamilton',
+  born_on: '1985/01/07',
+  country: uk
+}
