@@ -33,4 +33,8 @@ class Driver < ActiveRecord::Base
     self.display_name = forename + " " + surname
   end
 
+  def age
+    ApplicationHelper.age( born_on )   
+  end
+
 end
