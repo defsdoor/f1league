@@ -58,6 +58,6 @@ class DriverTest < ActiveSupport::TestCase
     driver.display_name = "Sterling Moss"
     driver.save
     driver.forename = 'Damon'
-    assert_not_equal driver.forename + " " + driver.surname, driver.display_name, "display name was overridden"
+    assert_not_equal driver.forename + " " + driver.surname, driver.display_name, "Different display name was overridden"
   end
 end

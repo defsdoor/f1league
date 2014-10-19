@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011122126) do
+ActiveRecord::Schema.define(version: 20141019100054) do
+
+  create_table "circuits", force: true do |t|
+    t.string  "name",           limit: 64,                          default: "",  null: false
+    t.integer "circuit_type",   limit: 1,                           default: 0,   null: false
+    t.integer "direction",      limit: 1,                           default: 0,   null: false
+    t.string  "location",       limit: 128,                         default: "",  null: false
+    t.decimal "current_length",             precision: 3, scale: 6, default: 0.0, null: false
+  end
 
   create_table "countries", force: true do |t|
     t.string "name",        limit: 64, default: "",  null: false
