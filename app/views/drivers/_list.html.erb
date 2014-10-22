@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Driver</th>
+      <th>Age</th>
+      <th>Nationality</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% unless @drivers.empty? %>
+    <%= render partial: 'row', collection: @drivers %>
+  <% else %>
+    <tr>
+      <td colspan="4">
+        <div class="alert alert-warning">No drivers found.</div>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= paginate @drivers,  remote: true %>

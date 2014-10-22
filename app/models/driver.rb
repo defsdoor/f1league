@@ -15,6 +15,8 @@
 #
 
 class Driver < ActiveRecord::Base
+  include Age
+
   belongs_to :country
   validates_presence_of :forename, :surname, :born_on
   validates_presence_of :country
@@ -22,6 +24,10 @@ class Driver < ActiveRecord::Base
   delegate :nationality, to: :country
 
   before_save :update_display_name
+
+  def age
+    age_from_today( born_on )
+  end
 
   private
 
@@ -31,10 +37,6 @@ class Driver < ActiveRecord::Base
 
   def set_display_name
     self.display_name = forename + " " + surname
-  end
-
-  def age
-    ApplicationHelper.age( born_on )   
   end
 
 end
