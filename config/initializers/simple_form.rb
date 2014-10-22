@@ -72,10 +72,10 @@ SimpleForm.setup do |config|
   config.error_notification_tag = :div
 
   # CSS class to add for error notification helper.
+  # config.error_notification_id = nil
   config.error_notification_class = 'error_notification'
 
   # ID to add for error notification helper.
-  # config.error_notification_id = nil
 
   # Series of attempts to detect a default label method for collection.
   # config.collection_label_methods = [ :to_label, :name, :title, :to_s ]
@@ -162,4 +162,17 @@ SimpleForm.setup do |config|
 
   # Defines which i18n scope will be used in Simple Form.
   # config.i18n_scope = 'simple_form'
+
+  config.wrappers :append, tag: 'div', class: 'form-group',  :error_class => 'has-error' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.use :label, class: 'control-label'
+
+    b.wrapper :tag => 'div', :class => 'input-group' do |input|
+      input.use :input,  class: 'form-control'
+    end
+    b.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+    b.use :error, :wrap_with => { :tag => 'span', :class => 'help-block' }
+  end
+
 end
