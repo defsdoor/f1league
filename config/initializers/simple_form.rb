@@ -166,6 +166,7 @@ SimpleForm.setup do |config|
   config.wrappers :append, tag: 'div', class: 'form-group',  :error_class => 'has-error' do |b|
     b.use :html5
     b.use :placeholder
+    b.use :maxlength
     b.use :label, class: 'control-label'
 
     b.wrapper :tag => 'div', :class => 'input-group' do |input|

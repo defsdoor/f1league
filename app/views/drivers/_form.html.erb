@@ -1,7 +1,10 @@
 <%= simple_form_for @driver do |f| %>
+  <%= f.error_notification %>
+  <%= f.error :base %>
   <%= f.input :forename %>
   <%= f.input :surname %>
   <%= f.input :display_name %>
+  <%= f.association :country %>
   <%= f.input :born_on, label: 'Date of brith', wrapper: :append do %>
     <%= f.input_field :born_on,  as: :string, class: 'form-control' %>
     <%= content_tag :span, button_tag( fa_icon(:calendar), class: 'btn btn-default'), class: 'input-group-btn' %>

@@ -18,8 +18,13 @@ class Driver < ActiveRecord::Base
   include Age
 
   belongs_to :country
-  validates_presence_of :forename, :surname, :born_on
   validates_presence_of :country
+
+  validates :forename, presence: true, length: { maximum: 32 }
+  validates :surname, presence: true, length: { maximum: 32 }
+  validates :born_on, presence: true
+  validates :country_id, presence: true
+  validates :country, presence: true
 
   delegate :nationality, to: :country
 

@@ -19,6 +19,6 @@ class DriversController < ApplicationController
   private
 
   def permitted_params
-    params.require(:driver).permit(:forename, :surname, :display_name, :born_on)
+    params.require(:driver).permit(:forename, :surname, :display_name, :born_on, :country_id)
   end
 end
