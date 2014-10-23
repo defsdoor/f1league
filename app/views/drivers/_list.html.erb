@@ -5,6 +5,7 @@
       <th>Driver</th>
       <th>Age</th>
       <th>Nationality</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -12,7 +13,7 @@
     <%= render partial: 'row', collection: @drivers %>
   <% else %>
     <tr>
-      <td colspan="4">
+      <td colspan="5">
         <div class="alert alert-warning">No drivers found.</div>
       </td>
     </tr>
