@@ -9,5 +9,6 @@
     <%= f.input_field :born_on,  as: :string, class: 'form-control' %>
     <%= content_tag :span, button_tag( fa_icon(:calendar), class: 'btn btn-default'), class: 'input-group-btn' %>
   <% end %>
+  <%= f.input :photo %>
   <%= f.submit %>
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141019100054) do
+ActiveRecord::Schema.define(version: 20141024181057) do
 
   create_table "circuits", force: true do |t|
     t.string  "name",           limit: 64,                          default: "",  null: false
@@ -27,11 +27,15 @@ ActiveRecord::Schema.define(version: 20141019100054) do
   end
 
   create_table "drivers", force: true do |t|
-    t.string  "forename",     limit: 32, default: "",           null: false
-    t.string  "surname",      limit: 32, default: "",           null: false
-    t.string  "display_name", limit: 64, default: "",           null: false
-    t.date    "born_on",                 default: '1970-01-01', null: false
-    t.integer "country_id"
+    t.string   "forename",           limit: 32, default: "",           null: false
+    t.string   "surname",            limit: 32, default: "",           null: false
+    t.string   "display_name",       limit: 64, default: "",           null: false
+    t.date     "born_on",                       default: '1970-01-01', null: false
+    t.integer  "country_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "drivers", ["country_id"], name: "index_drivers_on_country_id"

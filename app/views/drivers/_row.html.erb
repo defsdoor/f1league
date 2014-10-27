@@ -1,5 +1,5 @@
 <tr>
-  <td><%= row.id %></td>
+  <td><%= image_tag row.photo.url(:thumb) %></td>
   <td><%= row.display_name %>
   <td><%= row.age %>
   <td><%= row.nationality %>

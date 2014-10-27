@@ -2,12 +2,16 @@
 #
 # Table name: drivers
 #
-#  id           :integer          not null, primary key
-#  forename     :string(32)       default(""), not null
-#  surname      :string(32)       default(""), not null
-#  display_name :string(64)       default(""), not null
-#  born_on      :date             default("1970/01/01"), not null
-#  country_id   :integer
+#  id                 :integer          not null, primary key
+#  forename           :string(32)       default(""), not null
+#  surname            :string(32)       default(""), not null
+#  display_name       :string(64)       default(""), not null
+#  born_on            :date             default("1970/01/01"), not null
+#  country_id         :integer
+#  photo_file_name    :string
+#  photo_content_type :string
+#  photo_file_size    :integer
+#  photo_updated_at   :datetime
 #
 # Indexes
 #

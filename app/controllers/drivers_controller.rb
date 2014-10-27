@@ -4,7 +4,7 @@ class DriversController < ApplicationController
   respond_to :html, :js
 
   def index
-    @drivers = Driver.page(params[:page])
+    @drivers = Driver.page(params[:page]).per(params[:per])
   end
 
   def show
@@ -34,6 +34,6 @@ class DriversController < ApplicationController
   private
 
   def permitted_params
-    params.require(:driver).permit(:forename, :surname, :display_name, :born_on, :country_id)
+    params.require(:driver).permit(:forename, :surname, :display_name, :born_on, :country_id, :photo)
   end
 end

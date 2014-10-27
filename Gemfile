@@ -40,6 +40,7 @@ gem 'rails-html-sanitizer', '~> 1.0'
 
 gem "seed_dump"
 
+gem "paperclip", "~> 4.2"
 gem 'simple_form', github: 'plataformatec/simple_form', branch: 'master'
 
 gem 'bootstrap-sass'
