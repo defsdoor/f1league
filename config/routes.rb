@@ -56,5 +56,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resources :drivers
+  resources :drivers do
+    member do 
+      get 'detail'
+    end
+  end
 end

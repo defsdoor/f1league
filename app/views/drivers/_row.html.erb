@@ -1,7 +1,5 @@
-<tr>
-  <td><%= image_tag row.photo.url(:thumb) %></td>
-  <td><%= row.display_name %>
-  <td><%= row.age %>
-  <td><%= row.nationality %>
-  <td><%= link_to 'Edit', edit_driver_path(row) %></td>
-</tr>
+<%= link_to detail_driver_path(row), class: 'list-group-item clearfix', remote: true do %>
+  <%= image_tag row.photo.url(:medium), class: 'list-icon pull-left' %>
+  <h4 class="list-group-item-heading"><%= row.display_name %></h4>
+  <p class="list-group-item-text"><%= row.nationality %></p>
+<% end %>

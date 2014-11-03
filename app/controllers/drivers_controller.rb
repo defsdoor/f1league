@@ -3,12 +3,13 @@ class DriversController < ApplicationController
 
   respond_to :html, :js
 
+  before_action :get_driver, only: [:show, :edit, :detail]
+
   def index
     @drivers = Driver.page(params[:page]).per(params[:per])
   end
 
   def show
-    @driver = Driver.find(params[:id])
   end
 
   def new
@@ -17,6 +18,9 @@ class DriversController < ApplicationController
 
   def edit
     @driver = Driver.find(params[:id])
+  end
+
+  def detail
   end
 
   def create
@@ -32,6 +36,10 @@ class DriversController < ApplicationController
   end
 
   private
+
+  def get_driver
+    @driver = Driver.find(params[:id])
+  end
 
   def permitted_params
     params.require(:driver).permit(:forename, :surname, :display_name, :born_on, :country_id, :photo)

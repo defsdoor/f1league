@@ -1,23 +1,30 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Driver</th>
-      <th>Age</th>
-      <th>Nationality</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% unless @drivers.empty? %>
-    <%= render partial: 'row', collection: @drivers %>
-  <% else %>
-    <tr>
-      <td colspan="5">
+<div class="bootcards-list col-sm-6">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form>
+        <div class="row">
+          <div class="col-xs-9">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Contacts...">
+              <i class="fa fa-search"></i>
+            </div>
+          </div>
+          <div class="col-xs-3">
+            <a class="btn btn-primary btn-block" href="#">
+              <i class="fa fa-plus"></i>
+              Add
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="list-group">
+      <% unless @drivers.empty? %>
+        <%= render partial: 'row', collection: @drivers %>
+      <% else %>
         <div class="alert alert-warning">No drivers found.</div>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+      <% end %>
+    </div>
+  </div>
+</div>
 <%= paginate @drivers,  remote: true %>
