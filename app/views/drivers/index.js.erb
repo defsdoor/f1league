@@ -1,1 +1,2 @@
-$('#drivers-list').html('<%= escape_javascript( render partial: 'list' ) %> ');
+$('#drivers').append('<%= j render partial: 'row', collection: @drivers %> ');
+$('#drivers-paginator .pagination').html('<%= j paginate @drivers, remote: true %>');

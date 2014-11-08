@@ -28,11 +28,11 @@
       <span>Back</span>
     </button>
     <!-- menu button to show/ hide the off canvas menu -->
-    <button type="button" class="btn btn-default btn-menu pull-left" data-toggle="offcanvas">
+    <button type="button" class="btn btn-default btn-menu pull-left offCanvasToggle" data-toggle="offcanvas">
       <i class="fa fa-lg fa-bars"></i>
       <span>Menu</span>
     </button>
-    <a class="navbar-brand" title="Bootcards Starter" href="/">F1 League</a>
+    <a class="navbar-brand" title="The Fantasy Formula One League" href="/">F1 League</a>
     <!--right aligned button-->
     <button type="button" class="btn btn-warning navbar-right">
       <i class="fa fa-lg fa-refresh"></i>
@@ -63,6 +63,28 @@
   <%= display_flash %>
   <%= yield %>
 </div>
+
+
+<!-- fixed tabbed footer -->
+<div class="navbar navbar-default navbar-fixed-bottom">
+<div class="container">
+<div class="bootcards-desktop-footer clearfix">
+<p class="pull-left">Bootcards</p>
+</div>
+<div class="btn-group">
+<a href="#" class="btn btn-default">
+<i class="fa fa-2x fa-dashboard"></i>Dashboard
+</a>
+<a href="starter-template.html" class="btn btn-default active">
+<i class="fa fa-2x fa-users"></i>Contacts
+</a>
+<a href="az-picker.html" class="btn btn-default">
+<i class="fa fa-2x fa-font"></i>AZ Picker
+</a>
+</div>
+</div>
+</div><!--footer-->
+
 
 </body>
 </html>

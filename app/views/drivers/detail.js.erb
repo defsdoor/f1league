@@ -1,1 +1,3 @@
+$('.driver_list_item').removeClass('active');
+$('.driver_list_item#driver_list_item_<%= @driver.id%>').addClass('active');
 $('#driver-detail').html('<%=escape_javascript( render partial: 'detail' ) %>')

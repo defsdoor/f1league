@@ -57,6 +57,9 @@ Rails.application.routes.draw do
   #   end
 
   resources :drivers do
+    collection do
+      get 'search'
+    end
     member do 
       get 'detail'
     end

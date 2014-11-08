@@ -4,9 +4,12 @@ class DriversController < ApplicationController
   respond_to :html, :js
 
   before_action :get_driver, only: [:show, :edit, :detail]
+  before_action :get_drivers, only: [:index, :search]
 
   def index
-    @drivers = Driver.page(params[:page]).per(params[:per])
+  end
+
+  def search
   end
 
   def show
@@ -39,6 +42,11 @@ class DriversController < ApplicationController
 
   def get_driver
     @driver = Driver.find(params[:id])
+  end
+
+  def get_drivers
+    @drivers = Driver.includes(:country).references(:country).page(params[:page]).per(6)
+    @drivers = @drivers.where("display_name like ? OR countries.name like ?", "%#{params[:search]}%", "%#{params[:search]}%") unless params[:search].blank?
   end
 
   def permitted_params

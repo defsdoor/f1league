@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-xs-9">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search Contacts...">
+              <input name="search" value="<%= params[:search]%>" type="text" class="form-control observed" data-remote="true" data-url="<%= search_drivers_path %>" placeholder="Search Drivers...">
               <i class="fa fa-search"></i>
             </div>
           </div>
@@ -18,13 +18,15 @@
         </div>
       </form>
     </div>
-    <div class="list-group">
+    <div class="list-group infinite-scrolling" id='drivers' data-paginator='#drivers-paginator'>
       <% unless @drivers.empty? %>
         <%= render partial: 'row', collection: @drivers %>
       <% else %>
         <div class="alert alert-warning">No drivers found.</div>
       <% end %>
     </div>
+    <div id="drivers-paginator">
+    <%= paginate @drivers,  remote: true %>
+    </div>
   </div>
 </div>
-<%= paginate @drivers,  remote: true %>
