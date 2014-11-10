@@ -1,5 +1,10 @@
 module ApplicationHelper
 
+  def next_page_url(scope, options = {})
+     next_page = Kaminari::Helpers::NextPage.new self, options.reverse_merge(:current_page => scope.current_page)
+     next_page.url
+  end
+
   def age(d)
     years_between_dates(d, Date.today)
   end

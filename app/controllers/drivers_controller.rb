@@ -45,7 +45,7 @@ class DriversController < ApplicationController
   end
 
   def get_drivers
-    @drivers = Driver.includes(:country).references(:country).page(params[:page]).per(6)
+    @drivers = Driver.includes(:country).references(:country).page(params[:page]).per(15)
     @drivers = @drivers.where("display_name like ? OR countries.name like ?", "%#{params[:search]}%", "%#{params[:search]}%") unless params[:search].blank?
   end
 

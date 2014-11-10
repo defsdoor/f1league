@@ -18,12 +18,16 @@
           return;
         }
 
-        var val = $this.val();
-        var checked = $this.prop('checked');
-        if(prev != val || checked != prevChecked ){
-          prev = val;
-          prevChecked = checked;
-          $this.map(callback); // invokes the callback on $this
+        if (! $this.hasClass('firing')) {
+          var val = $this.val();
+          var checked = $this.prop('checked');
+          if(prev != val || checked != prevChecked ){
+            $this.addClass('firing');
+            prev = val;
+            prevChecked = checked;
+            $this.map(callback); // invokes the callback on $this
+            $this.removeClass('firing');
+          }
         }
       };
 

@@ -1,0 +1,6 @@
+<% unless @drivers.empty? %>
+  <%= render partial: 'row', collection: @drivers %>
+  <%= render partial: 'more' %>
+<% else %>
+  <div class="alert alert-warning">No drivers found.</div>
+<% end %>

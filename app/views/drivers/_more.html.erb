@@ -1,0 +1,7 @@
+<% if @drivers.next_page %>
+  <%= link_to next_page_url( @drivers ), remote: true, class: 'more' do %>
+    <div class="alert alert-info text-center">
+    More...
+    </div>
+  <% end %>
+<% end %>
